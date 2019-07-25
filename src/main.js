@@ -4,15 +4,24 @@ import Vue from 'vue'
 import app from './App.vue'
 import VueRouter from 'vue-router'
 import { Header } from 'mint-ui'
-// import Header from 'mint-ui/lib/header';
-// import 'mint-ui/lib/header/style.css'
-// Vue.component(Button.name, Button);
 Vue.component(Header.name, Header)
-Vue.use(VueRouter);
+
+import { Swipe, SwipeItem } from 'mint-ui';
+Vue.component(Swipe.name, Swipe);
+Vue.component(SwipeItem.name, SwipeItem);
+
+Vue.use(VueRouter)
+
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
+
 import './lib/mui/css/mui.min.css'
+import './lib/mui/css/icons-extra.css'
+import router from './router.js'
 var vm=new Vue({
     el:'#app',
-    render:c =>c(app)
+    render:c =>c(app),
+    router
 })
 
 
